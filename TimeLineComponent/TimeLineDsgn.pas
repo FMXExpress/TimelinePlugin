@@ -353,7 +353,7 @@ begin
         wButton.Color := TAlphaColors.White;
       wButton.Parent := ATimeLineLayer.ItemsPanel;
       wButton.Position.X := LAYER_BUTTON_WIDTH * (AFrameIndex + 1) + 10;
-      wButton.Align := TAlignLayout.alLeft;
+      wButton.Align := TAlignLayout.Left;
       ATimeLineLayer.ItemButtons.Add(wButton);
     except
       On E:Exception do
@@ -440,7 +440,7 @@ begin
     FRuler := TRuler.Create(Self);
     FRuler.Parent := pnlRuler;
     FRuler.OnMouseUp := pnlRulerMouseUp;
-    FRuler.Align := TAlignLayout.alClient;
+    FRuler.Align := TAlignLayout.Client;
     TreeView1.ItemHeight := LAYER_HEIGHT;
   except
     On E:Exception do

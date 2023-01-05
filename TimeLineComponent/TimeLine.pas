@@ -19,7 +19,7 @@ type
     procedure SetFrameIndex(const Value: Word);
     procedure SetLayerIndex(const Value: Word);
   protected
-  {$IF CompilerVersion = 28.0}
+  {$IF CompilerVersion >= 28.0}
     procedure ParentChanged; override;
   {$ELSE}
     procedure ChangeParent; override;
@@ -77,7 +77,7 @@ type
     procedure DoRealign; override;
     procedure Resize; override;
     procedure ReadState(Reader: TReader); override;
-  {$IF CompilerVersion = 28.0}
+  {$IF CompilerVersion >= 28.0}
     procedure ParentChanged; override;
   {$ELSE}
     procedure ChangeParent; override;
@@ -123,7 +123,7 @@ end;
 
 { TTimeLine }
 
-{$IF CompilerVersion = 28.0}
+{$IF CompilerVersion >= 28.0}
 procedure TTimeLine.ParentChanged;
 {$ELSE}
 procedure TTimeLine.ChangeParent;
@@ -688,7 +688,7 @@ end;
 
 { TTimeLineLayout }
 
-{$IF CompilerVersion = 28.0}
+{$IF CompilerVersion >= 28.0}
   procedure TTimeLineItem.ParentChanged;
 {$ELSE}
   procedure TTimeLineItem.ChangeParent;
@@ -723,7 +723,7 @@ begin
   FDesignInteractive := False;
   Locked := True;
   CanFocus := False;
-  Align := TAlignLayout.alClient;
+  Align := TAlignLayout.Client;
   Visibility := True;
 end;
 
